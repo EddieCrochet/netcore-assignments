@@ -4,6 +4,18 @@
 <h2>@ViewData["Title"]</h2>
 <h3>@ViewData["Message"]</h3>
 
+@{
+    int minute = DateTime.Now.Minute;
+    if (minute % 2 == 0)
+    {
+        Layout = "_MyLayout";
+    }
+    else
+    {
+        Layout = "_Layout";
+    }
+}
+
 <address>
     One Microsoft Way<br />
     Redmond, WA 98052-6399<br />
