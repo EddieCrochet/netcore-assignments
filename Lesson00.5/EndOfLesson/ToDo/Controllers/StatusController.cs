@@ -8,6 +8,7 @@ namespace ToDoApp.Controllers
 {
     public class StatusController : Controller
     {
+        private static List<Status>
         public IActionResult Index()
         {
             return View();
