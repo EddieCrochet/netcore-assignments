@@ -4,29 +4,51 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using ToDoApp.Models;
+using ToDoApp.Services;
 
 namespace ToDoApp.Controllers
 {
     public class StatusController : Controller
     {
-        private static List<Status> StatusList = new List<Status>()
+        public ActionResult Index()
         {
-            new Status {Id = 1, Value = "Not Started" },
-            new Status {Id = 2, Value = "In Progress"},
-            new Status {Id = 3, Value = "Done" },
-            new Status {Id = 4, Value = "In Review"},
-        };
-        public IActionResult Index()
-        {
-            return View(StatusList);
+            return View(Repository.StatusList);
         }
         public ActionResult Create()
         {
             return View();
         }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(Status collection)
+        {
+            try
+            {
+                return RedirectToAction(nameof(Index));
+            }
+            catch
+            {
+                return View();
+            }
+        }
         public ActionResult Edit(Status Collection)
         {
             return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int id, Status collection)
+        {
+            try
+            {
+                return RedirectToAction(nameof(Index));
+            }
+            catch
+            {
+                return View();
+            }
         }
     }
 }
