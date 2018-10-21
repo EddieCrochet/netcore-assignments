@@ -32,9 +32,11 @@ namespace ToDoApp.Controllers
                 return View();
             }
         }
-        public ActionResult Edit(Status Collection)
+        public ActionResult Edit(int id)
         {
-            return View();
+            Status statusTheUserRequestedToEdit = Repository.StatusList.FirstOrDefault(status => status.Id == id);
+            return View(statusTheUserRequestedToEdit);
+            //getting the record from the repository after we pass into this method
         }
 
         [HttpPost]
