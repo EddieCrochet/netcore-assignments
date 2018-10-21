@@ -9,6 +9,7 @@ using System;
 using System.IO;
 using System.Text;
 using System.Threading.Tasks;
+using ToDoApp.Middleware;
 
 namespace ToDoApp
 {
@@ -37,6 +38,20 @@ namespace ToDoApp
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            app.Use(async (context, next) =>
+            {
+                //start timing
+                var sw = new System.Diagnostics.Stopwatch();
+                sw.Start();
+                //work that doesnt write to response
+                await next.Invoke();
+                //logging or other work that doesnt write to response
+                //stop timing
+                sw.Stop();
+                Console.WriteLine("It takes this much time in milliseconds: {0}", sw.Elapsed.Milliseconds);
+            });
+
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -46,16 +61,9 @@ namespace ToDoApp
                 app.UseExceptionHandler("/Home/Error");
             }
 
-            app.Use(async (HttpContext context, Func<Task> next) =>
-            {
-                var watch = System.Diagnostics.Stopwatch.StartNew();
-                await next();
-
-            });
-
-
             app.UseStaticFiles();
             app.UseCookiePolicy();
+            app.UseMiddleware<UnwrapExceptionMiddleware>();
 
             app.UseMvc(routes =>
             {
