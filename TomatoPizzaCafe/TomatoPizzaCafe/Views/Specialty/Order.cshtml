@@ -1,0 +1,83 @@
+﻿@model TomatoPizzaCafe.Models.Pizza
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <style>
+
+        html
+        {
+            background-image: url('@Url.Content("~/images/tomatocafe.jpg")');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: auto;
+            height: 50%
+        }
+
+        footer
+        {
+            position: fixed;
+            bottom: 0;
+        }
+    </style>
+</div>
+
+<h2>Order Online</h2>
+
+<h4>Pizza</h4>
+<hr />
+<div class="panel panel-success">
+    <div class="panel-heading text-center"><h4>Order Form</h4></div>
+    <div class="panel-body">
+        <form class="col-md-6" asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="PizzaId" />
+            <div>
+                @ViewBag.name
+            </div>
+
+            <strong>Select the Pizza Size</strong>
+            <div class="radio">
+                <label>
+                    <input type="radio" asp-for="Size" value="8" name="optradio" id="optradio" tabindex="2" />
+                    8-Inch - $9.25
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                    <input type="radio" asp-for="Size" value="10" name="optradio" id="optradio" tabindex="2" />
+                    10-Inch - $11.25
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                    <input type="radio" asp-for="Size" value="12" name="optradio" id="optradio" tabindex="2" />
+                    12-Inch - $13.25
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                    <input type="radio" asp-for="Size" value="14" name="optradio" id="optradio" tabindex="2" />
+                    14-Inch - $15.25
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                    <input type="radio" asp-for="Size" value="18" name="optradio" id="optradio" tabindex="2" />
+                    18-Inch - $19.95
+                </label>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
