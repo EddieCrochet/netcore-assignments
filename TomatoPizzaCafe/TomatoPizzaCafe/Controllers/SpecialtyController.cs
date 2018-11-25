@@ -40,7 +40,7 @@ namespace TomatoPizzaCafe.Controllers
         }
 
         // GET: Specialty/Create
-        public async Task<IActionResult> Order(int? id)
+        public async Task<IActionResult> Create(int? id)
         {
             if (id == null)
             {
