@@ -12,6 +12,6 @@ namespace TomatoPizzaCafe.Models
         public string OrderPieId { get; set; }
         public string  CustomerId { get; set; }
         public int Quantity { get; set; }
-        public int ProductId { get; set; }
+        public int PizzaId { get; set; }
     }
 }

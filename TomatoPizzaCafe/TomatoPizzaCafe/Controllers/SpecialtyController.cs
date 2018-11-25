@@ -40,20 +40,23 @@ namespace TomatoPizzaCafe.Controllers
         }
 
         // GET: Specialty/Create
-        public async Task<IActionResult> Create(int? id)
+        public async Task<IActionResult> Create()
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
+            //if (id == null)
+            //{
+            //    //return NotFound();
+            //}
 
-            var pizza = await _context.Pizzas.FirstOrDefaultAsync(m => m.PizzaId == id);
-            if (pizza == null)
-            {
-                return NotFound();
-            }
-            ViewBag.name = pizza.Type;
-            return View(pizza);
+            //var pizza = await _context.Pizzas.FirstOrDefaultAsync(m => m.PizzaId == id);
+            //if (pizza == null)
+            //{
+            //    ModelState.AddModelError("", "Pizza not found.");
+            //    return View();
+            //    // return NotFound();
+            //}
+            //ViewBag.name = pizza.Type;
+            //return View(pizza);
+            return View();
         }
 
         // POST: Specialty/Create
