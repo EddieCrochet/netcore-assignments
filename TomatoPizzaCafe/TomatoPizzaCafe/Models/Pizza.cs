@@ -9,7 +9,7 @@ namespace TomatoPizzaCafe.Models
     {
         public int PizzaId { get; set; }
         public string Type { get; set; }
-        public int Size { get; set; }
+        public int Description { get; set; }
         public double EightInchPrice { get; private set; }
         public double TenInchPrice { get; private set; }
         public double TwelveInchPrice { get; private set; }
