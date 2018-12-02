@@ -8,8 +8,7 @@
 <div class="container">
     <style>
 
-        html
-        {
+        html {
             background-image: url('@Url.Content("~/images/tomatocafe.jpg")');
             background-position: center;
             background-repeat: no-repeat;
@@ -17,8 +16,7 @@
             height: 50%
         }
 
-        footer
-        {
+        footer {
             position: fixed;
             bottom: 0;
         }
@@ -39,26 +37,36 @@
                 <input asp-for="Type" class="form-control" />
                 <span asp-validation-for="Type" class="text-danger"></span>
             </div>
-
-            <div>
-                <strong>Select the Pizza size</strong>
-                <input type="radio" asp-for="Size" value="8" tabindex="2" class="form-control" />
-                8-Inch - $9.25
-                <br />
-                <input type="radio" asp-for="Size" value="10" tabindex="2" class="form-control" />
-                10-Inch - $11.25
-                <br />
-                <input type="radio" asp-for="Size" value="12" tabindex="2" class="form-control" />
-                12-Inch - $13.25
-                <br />
-                <input type="radio" asp-for="Size" value="14" tabindex="2" class="form-control" />
-                14-Inch - $15.25
-                <br />
-                <input type="radio" asp-for="Size" value="18" tabindex="2" class="form-control" />
-                18-Inch - $19.95
-                <br />
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
             </div>
-
+            <div class="form-group">
+                <label asp-for="EightInchPrice" class="control-label"></label>
+                <input asp-for="EightInchPrice" class="form-control" />
+                <span asp-validation-for="EightInchPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TenInchPrice" class="control-label"></label>
+                <input asp-for="TenInchPrice" class="form-control" />
+                <span asp-validation-for="TenInchPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TwelveInchPrice" class="control-label"></label>
+                <input asp-for="TwelveInchPrice" class="form-control" />
+                <span asp-validation-for="TwelveInchPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FourteenInchPrice" class="control-label"></label>
+                <input asp-for="FourteenInchPrice" class="form-control" />
+                <span asp-validation-for="FourteenInchPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EighteenInchPrice" class="control-label"></label>
+                <input asp-for="EighteenInchPrice" class="form-control" />
+                <span asp-validation-for="EighteenInchPrice" class="text-danger"></span>
+            </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-default" />
             </div>
@@ -70,6 +78,6 @@
     <a asp-action="Index">Back to List</a>
 </div>
 
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }

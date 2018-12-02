@@ -42,20 +42,6 @@ namespace TomatoPizzaCafe.Controllers
         // GET: Specialty/Create
         public ActionResult Create()
         {
-            //if (id == null)
-            //{
-            //    //return NotFound();
-            //}
-
-            //var pizza = await _context.Pizzas.FirstOrDefaultAsync(m => m.PizzaId == id);
-            //if (pizza == null)
-            //{
-            //    ModelState.AddModelError("", "Pizza not found.");
-            //    return View();
-            //    // return NotFound();
-            //}
-            //ViewBag.name = pizza.Type;
-            //return View(pizza);
             return View();
         }
 
@@ -64,7 +50,7 @@ namespace TomatoPizzaCafe.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("PizzaId, Type, Size, Price")] Pizza pizza)
+        public async Task<IActionResult> Create([Bind("PizzaId,Type,Description, EightInchPrice, TenInchPrice, TwelveInchPrice, FourteenInchPrice, EighteenInchPrice")] Pizza pizza)
         {
             if (ModelState.IsValid)
             {
@@ -73,6 +59,35 @@ namespace TomatoPizzaCafe.Controllers
                 return RedirectToAction(nameof(Index));
             }
             return View(pizza);
+        }
+
+        //Get: Specialty/Order
+        public async Task<IActionResult> Order(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var pizza = await _context.Pizzas.FindAsync(id);
+            if (pizza == null)
+            {
+                return NotFound();
+            }
+            return View(pizza);
+        }
+
+        //POST: Specialty/Order
+        [HttpPost]
+        public IActionResult Order(int id)
+        {
+            return View(nameof(Thanks));
+        }
+        //Good way to return two views with one method/action?
+
+        public IActionResult Thanks()
+        {
+            return View();
         }
 
         // GET: Specialty/Edit/5
