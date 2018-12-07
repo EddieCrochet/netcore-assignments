@@ -34,9 +34,10 @@ namespace TomatoPizzaCafe
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-            services.AddDbContext<ApplicationContext>(options =>
-                options.UseSqlServer(
-                    Configuration.GetConnectionString("TomatoPizzaCafeContextConnection")));
+            //services.AddDbContext<ApplicationContext>(options =>
+            //options.UseSqlServer(
+            //Configuration.GetConnectionString("TomatoPizzaCafeContextConnection")));
+            services.AddDbContext<ApplicationContext>(config => config.UseInMemoryDatabase("TomatoPizzaCafe"));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
