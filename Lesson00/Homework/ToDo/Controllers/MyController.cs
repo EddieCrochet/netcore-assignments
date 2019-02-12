@@ -13,7 +13,7 @@ namespace ToDo.Controllers
             var spanishMessage = hour < 12 ? "Buenos Días" : "Buenas Tardes";
             ViewData["SpanishGreeting"] = spanishMessage;
             var mandarinMessage = hour < 12 ? "早上好" : "下午好";
-            return View("Greeting", mandarinMessage);
+            return View("Index", mandarinMessage);
         }
     }
 }

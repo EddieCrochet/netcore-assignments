@@ -3,6 +3,18 @@
     ViewData["Title"] = "Greeting";
 }
 
+@{
+    int minute = DateTime.Now.Minute;
+    if (minute % 2 == 0)
+    {
+        Layout = "_MyLayout";
+    }
+    else
+    {
+        Layout = "_Layout";
+    }
+}
+
 <h2>Greeting</h2>
 
 <p>@ViewBag.EnglishGreeting World (using @@ViewBag)</p>
