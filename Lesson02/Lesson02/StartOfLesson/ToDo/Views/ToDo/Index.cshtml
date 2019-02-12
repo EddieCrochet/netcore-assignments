@@ -41,6 +41,9 @@
 
                     @(item.Created < DateTime.Now.AddDays(7) ? item.Created.DayOfWeek.ToString() : item.Created.ToString("mm/dd/yyyy"))
 
+
+                    @(item.Created < DateTime.Now.AddDays(7) ? item.Created.DayOfWeek.ToString() : item.Created.ToString("mm/dd/yyyy"))
+
                     <span day-of-week asp-for="@item.Created"></span>
 
                 </td>

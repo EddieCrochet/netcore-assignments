@@ -32,9 +32,11 @@ namespace ToDoApp.Controllers
         public ActionResult Create(ToDo toDo)
         {
 
+
             if (!ModelState.IsValid)
                 return View();
             //above keeps hackers from creating what we consider bad data
+
 
 
             try
@@ -61,8 +63,10 @@ namespace ToDoApp.Controllers
         public ActionResult Edit(int id, ToDo toDo)
         {
 
+
             if (!ModelState.IsValid)
                 return View();
+
 
             try
             {

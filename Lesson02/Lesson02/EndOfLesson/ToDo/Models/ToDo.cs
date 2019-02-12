@@ -1,5 +1,6 @@
 ﻿using System;
 
+
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using ToDoApp.ValidationAttributes;
@@ -17,6 +18,7 @@ namespace ToDoApp.Models
 
         [StringLength(200)]
 
+
 using System.ComponentModel.DataAnnotations;
 
 namespace ToDoApp.Models
@@ -28,12 +30,16 @@ namespace ToDoApp.Models
         public string Title { get; set; }
 
 
+
         public string Description { get; set; }
 
         [UIHint("Status")]
         public Status Status { get; set; }
 
         [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
+
+        public DateTime? Created { get; set; }
+
 
         [DateTimeToDayValidation]
         public DateTime? Created { get; set; }
@@ -48,6 +54,7 @@ namespace ToDoApp.Models
         }
 
         public DateTime? Created { get; set; }
+
 
     }
 }
