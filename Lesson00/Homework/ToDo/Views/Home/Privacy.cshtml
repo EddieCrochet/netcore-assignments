@@ -1,0 +1,19 @@
+﻿@{
+    ViewData["Title"] = "Privacy Policy";
+}
+
+@{
+    int minute = DateTime.Now.Minute;
+    if (minute % 2 == 0)
+    {
+        Layout = "_MyLayout";
+    }
+    else
+    {
+        Layout = "_Layout";
+    }
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<p>Use this page to detail your site's privacy policy.</p>
