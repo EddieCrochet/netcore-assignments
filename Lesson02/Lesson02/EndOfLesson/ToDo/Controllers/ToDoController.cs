@@ -31,6 +31,14 @@ namespace ToDoApp.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(ToDo toDo)
         {
+
+
+            if (!ModelState.IsValid)
+                return View();
+            //above keeps hackers from creating what we consider bad data
+
+
+
             try
             {
                 // TODO: Add insert logic here
@@ -54,6 +62,12 @@ namespace ToDoApp.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit(int id, ToDo toDo)
         {
+
+
+            if (!ModelState.IsValid)
+                return View();
+
+
             try
             {
                 // TODO: Add update logic here

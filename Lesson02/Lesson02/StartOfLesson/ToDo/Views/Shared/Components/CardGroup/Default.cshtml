@@ -1,0 +1,7 @@
+﻿@model IEnumerable<CardViewModel>
+<div class="Row">
+    @foreach (var item in Model)
+    {
+        @(await Component.InvokeAsync("Card", item))
+    }
+</div>
