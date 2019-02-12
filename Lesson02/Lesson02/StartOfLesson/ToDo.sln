@@ -11,6 +11,11 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TagHelpers.Test", "TagHelpers.Test\TagHelpers.Test.csproj", "{57F52EFF-B390-4512-B8B8-6B24B0771035}"
 
 
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TagHelpers", "TagHelpers\TagHelpers.csproj", "{31A69459-2ACA-452F-91AD-71AA0421F7A7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TagHelpers.Test", "TagHelpers.Test\TagHelpers.Test.csproj", "{57F52EFF-B390-4512-B8B8-6B24B0771035}"
+
+
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TagHelpers", "TagHelpers\TagHelpers.csproj", "{31A69459-2ACA-452F-91AD-71AA0421F7A7}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TagHelpers.Test", "TagHelpers.Test\TagHelpers.Test.csproj", "{57F52EFF-B390-4512-B8B8-6B24B0771035}"
@@ -20,6 +25,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoApp.Tests", "ToDoApp.Te
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TagHelpers", "TagHelpers\TagHelpers.csproj", "{31A69459-2ACA-452F-91AD-71AA0421F7A7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TagHelpers.Test", "TagHelpers.Test\TagHelpers.Test.csproj", "{57F52EFF-B390-4512-B8B8-6B24B0771035}"
+
 
 EndProject
 Global
@@ -46,6 +52,7 @@ Global
 		{B42D6376-8D81-4317-A3F7-C6042BC44ECD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B42D6376-8D81-4317-A3F7-C6042BC44ECD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B42D6376-8D81-4317-A3F7-C6042BC44ECD}.Release|Any CPU.Build.0 = Release|Any CPU
+
 
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
