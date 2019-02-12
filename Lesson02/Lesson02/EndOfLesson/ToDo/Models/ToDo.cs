@@ -1,4 +1,5 @@
 ﻿using System;
+
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using ToDoApp.ValidationAttributes;
@@ -15,12 +16,25 @@ namespace ToDoApp.Models
         public string Title { get; set; }
 
         [StringLength(200)]
+
+using System.ComponentModel.DataAnnotations;
+
+namespace ToDoApp.Models
+{
+    public class ToDo
+    {
+        public int Id { get; set; }
+
+        public string Title { get; set; }
+
+
         public string Description { get; set; }
 
         [UIHint("Status")]
         public Status Status { get; set; }
 
         [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
+
         [DateTimeToDayValidation]
         public DateTime? Created { get; set; }
 
@@ -32,5 +46,8 @@ namespace ToDoApp.Models
                     yield return new ValidationResult("Title and Description cannot be the same");
             }
         }
+
+        public DateTime? Created { get; set; }
+
     }
 }

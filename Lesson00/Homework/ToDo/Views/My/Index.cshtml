@@ -1,0 +1,24 @@
+﻿@{
+    int minute = DateTime.Now.Minute;
+    if (minute % 2 == 0)
+    {
+        Layout = "_MyLayout";
+    }
+    else
+    {
+        Layout = "_Layout";
+    }
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>My View</title>
+</head>
+<body>
+    <div>
+        Hello World (from the view)
+    </div>
+</body>
+</html>

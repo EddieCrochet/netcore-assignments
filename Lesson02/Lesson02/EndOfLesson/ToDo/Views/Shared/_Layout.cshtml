@@ -71,6 +71,9 @@
         <script src="~/js/site.min.js" asp-append-version="true"></script>
     </environment>
 
+
+    @await  Component.InvokeAsync("SocialMedia")
+
     @RenderSection("Scripts", required: false)
 </body>
 </html>
